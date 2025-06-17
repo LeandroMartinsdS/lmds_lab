@@ -18,12 +18,12 @@ void build_matrix_D(void) {
 }
 
 
-void build_state_space(cJSON *json_type) {
+void build_state_space(cJSON *json_str) {
     // TODO: Add another argument to choose in which
     // format the matrix will be built
 
     // Extract DoFs - TODO: move to another function
-    cJSON *DoFs = cJSON_GetObjectItem(json_type, "DoFs");
+    cJSON *DoFs = cJSON_GetObjectItem(json_str, "DoFs");
     if (DoFs == NULL) {
         printf("Error: 'DoFs' not found\n");
         return;
@@ -43,7 +43,7 @@ void build_state_space(cJSON *json_type) {
         mass[id] = cJSON_GetObjectItem(DoF, "mass")->valuedouble;
     }
 
-    cJSON *connections = cJSON_GetObjectItem(json_type, "connections");
+    cJSON *connections = cJSON_GetObjectItem(json_str, "connections");
     // if (connections != NULL) {
 
     // }

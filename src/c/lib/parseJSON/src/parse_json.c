@@ -20,7 +20,7 @@ void handle_json_type( cJSON *json_type, cJSON *json_str) {
     } else if(strcmp(json_type->valuestring, "transfer_function") == 0) {
         // PLACEHOLDER
     } else if(strcmp(json_type->valuestring, "mass_spring_dampness") == 0) {
-        // build_state_space(json_type);
+        build_state_space(json_str);
      } else if(strcmp(json_type->valuestring, "RLC") == 0) {
         //PLACEHOLDER
     } else {
