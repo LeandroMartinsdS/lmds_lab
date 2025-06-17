@@ -3,11 +3,16 @@
 
 // Define matrix size (for simplicity, assuming a maximum of 4 DoFs)
 #define MAX_DOF 4
+#define STATE_PER_DOF 2 // Each DoF has a position and velocity state
+
+// Define the maximum number of states
+#define MAX_STATES (MAX_DOF * STATE_PER_DOF)
+#define MAX_INPUTS 1 // Assuming a single input for the system
 
 // Define state-space matrices
-extern double A[2 * MAX_DOF][2 * MAX_DOF];
-extern double B[2 * MAX_DOF][1];
-extern double C[1][2 * MAX_DOF];
-extern double D[1][1];
+extern double A[MAX_STATES][MAX_STATES];
+extern double B[MAX_STATES][MAX_INPUTS];
+extern double C[MAX_INPUTS][MAX_STATES];
+extern double D[MAX_INPUTS][MAX_INPUTS];
 
 #endif // CONFIG_H
