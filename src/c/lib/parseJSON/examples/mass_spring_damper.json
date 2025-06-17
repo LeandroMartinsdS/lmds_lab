@@ -1,7 +1,7 @@
 {
   "name": "Flexible Connection System",
   "description": "A Mass-Spring-Damper system with multiple degrees-of-freedom",
-  "type": "MSD",
+  "type": "mass_spring_dampness",
   "DoFs": [
     {
       "id": 1,
